@@ -1,0 +1,326 @@
+<div class="container">
+    <style type="text/css">.sub-menu-title {
+              display: flex !important;
+            }
+            @media (min-width: 1140px) {
+              .container {
+                margin-top: 145px;
+              }
+            }
+            .sub-menu-title {
+              display: flex !important;
+            }
+            .container p {
+              word-break: keep-all !important;
+            }
+            .accordion p {
+              margin: 0 !important;
+              word-break: keep-all !important;
+            }
+            .xe-sub-banner-wrap {
+              display: none !important;
+            }
+    
+            .main-title {
+              font-size: 24px !important;
+              font-weight: bold;
+              color: #00509e !important;
+              margin-bottom: 10px;
+            }
+    
+            .subtitle {
+              font-family: "Noto Sans KR" !important;
+              font-size: 22px !important;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 31px !important; /* 140.909% */
+              color: #001226 !important;
+            }
+    
+            .description {
+              color: #001226 !important;
+              font-family: "Noto Sans KR" !important;
+              font-size: 16px !important;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 25px !important; /* 156.25% */
+              letter-spacing: -0.8px;
+            }
+    
+            .image-container {
+              width: 100%;
+              margin-bottom: 30px;
+              border-radius: 0px;
+              overflow: hidden;
+            }
+    
+            .image-container img {
+              width: 100%;
+              height: auto;
+            }
+    
+            .accordion {
+              font-size: 18px !important;
+              color: #001226 !important;
+              padding: 0;
+              cursor: pointer;
+              border-bottom: 1px solid #dae1e9;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              background-color: #fff;
+              position: relative;
+              transition: background-color 0.3s, border-left 0.3s;
+            }
+    
+            .accordion.active {
+              border-left: 4px solid #00509e;
+              color: #00509e !important;
+            }
+            .accordion:hover {
+              background-color: #e6f1fc;
+              border-left: 4px solid #ffea00;
+              color: #00509e !important;
+            }
+            .accordion.active p {
+              font-size: 14px !important;
+              font-style: normal !important;
+              font-weight: 700 !important;
+              line-height: 18px !important; /* 128.571% */
+              color: #00509e !important;
+            }
+            .accordion p {
+              font-size: 14px !important;
+              font-style: normal !important;
+              font-weight: 700 !important;
+              line-height: 18px !important; /* 128.571% */
+              color: #001226 !important;
+            }
+    
+            .xe-plus-icon {
+              width: 50px;
+            }
+    
+            .xe-minus-icon {
+              display: none;
+              width: 50px;
+            }
+    
+            .accordion.active .xe-plus-icon {
+              display: none !important;
+            }
+    
+            .accordion.active .xe-minus-icon {
+              display: flex !important;
+            }
+    
+            .accordion-content {
+              display: none;
+              background: linear-gradient(180deg, #fff 0%, #edf0f3 11.61%);
+              padding: 30px 20px;
+              color: #001226 !important;
+              font-family: "Noto Sans KR" !important;
+              font-size: 16px !important;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 25px !important; /* 156.25% */
+              letter-spacing: -0.64px;
+            }
+    
+            .accordion.active + .accordion-content {
+              display: block;
+            }
+    
+            .accordion-content ul {
+              list-style: disc;
+              padding-left: 20px;
+              list-style-type: disc !important;
+              margin-block-start: 1em !important;
+              margin-block-end: 1em !important;
+              margin-inline-start: 0px !important;
+              margin-inline-end: 0px !important;
+              padding-inline-start: 40px !important;
+              unicode-bidi: isolate !important;
+            }
+    
+            .accordion-content ul li {
+              margin-bottom: 10px;
+            }
+    
+            .accordion-content a {
+              color: #00509e !important;
+              text-decoration: none;
+            }
+    
+            .accordion-content a:hover {
+              text-decoration: underline;
+            }
+    
+            /* 미디어 쿼리 */
+            @media (min-width: 1140px) {
+              .main-title {
+                font-size: 32px !important;
+                margin-bottom: 20px;
+              }
+    
+              .subtitle {
+                color: #001226 !important;
+                font-family: "Noto Sans KR" !important;
+                font-size: 27px !important;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 43px !important; /* 159.259% */
+              }
+    
+              .description {
+                color: #001226 !important;
+                font-family: "Noto Sans KR" !important;
+                font-size: 18px !important;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 27px !important; /* 150% */
+                letter-spacing: -0.36px;
+              }
+    
+              .accordion {
+                font-size: 20px !important;
+              }
+              .accordion p {
+                font-size: 15px !important;
+              }
+              .accordion.active p {
+                font-size: 15px !important;
+              }
+    
+              .accordion-content {
+                font-size: 18px !important;
+                padding: 40px 30px;
+              }
+            }
+    </style>
+    <!-- 부제목 -->
+    <p class="subtitle">전입 안내</p>
+    <!-- 설명 -->
+    
+    <p class="description">남성초등학교는 세상을 변화시키는 글로벌 인재를 키우는 곳입니다. 남성초등학교는 서로를 존중하고 창의적으로 탐구하며 도전하는 학생들을 위한 환경을 제공합니다. 학생들이 세상을 변화시키는 리더로 성장할 수 있도록 도울 것입니다. 남성초와 함께하는 여정에서 자녀의 새로운 가능성과 재능을 발견해 보세요! 지금도 늦지 않았습니다.</p>
+    <!-- 이미지 영역 -->
+    
+    <div class="image-container"><img alt="" class="__xe_image" data-id="2faf1896-d631-408e-9631-40c598c5ace5" data-media-id="73ed9e09-bad7-44fa-8681-02d62570e161" src="https://www.nisb.busan.kr/storage/app/public/media/public/media_library/2f/af/20240910205717132cf7fc7ba1cb2f93487ae10f3ec172d3e03993.jpg" /></div>
+    <!-- 절차 섹션 -->
+    
+    <div class="accordion active"><svg class="xe-plus-icon" fill="none" viewbox="0 0 50 55" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z" fill="#005EC4" fill-rule="evenodd"></path></svg> <svg class="xe-minus-icon" fill="none" viewbox="0 0 50 55" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z" fill="#005EC4" fill-rule="evenodd"></path></svg>
+    
+    <p>절차</p>
+    </div>
+    
+    <div class="accordion-content">전입 희망의 문은 활짝 열려있습니다. 다만, 해당 학년의 결원이 발생할 경우 면접 일정이 시작됩니다. 아래 절차에 따라 전학을 하실 수 있습니다.
+    <ol>
+        <li>원서 접수</li>
+        <li>면접 일정 확인</li>
+        <li>합격자 통보</li>
+        <li>전입</li>
+    </ol>
+    </div>
+    <!-- 접수 섹션 -->
+    
+    <div class="accordion"><svg class="xe-plus-icon" fill="none" viewbox="0 0 50 55" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z" fill="#005EC4" fill-rule="evenodd"></path></svg> <svg class="xe-minus-icon" fill="none" viewbox="0 0 50 55" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z" fill="#005EC4" fill-rule="evenodd"></path></svg>
+    
+    <p>접수</p>
+    </div>
+    
+    <div class="accordion-content">
+        <p>하단의 전입 신청서로 접수하실 수 있습니다.</p>
+        <style type="text/css">.xe-btn-wrapper222 {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+          }
+          .btn-xe-grid-container:hover {
+            opacity: 0.8;
+          }
+          .btn-xe-grid-container {
+            background-color: #005ec4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 13px 20px !important;
+            gap: 10px !important;
+            width: 100%;
+            max-width: 280px !important;
+            text-decoration: none !important;
+          }
+          .btn-xe-grid-container svg {
+            width: 18px !important;
+          }
+          .btn-xe-grid-container span {
+            color: var(--9, #fff) !important;
+            text-align: center;
+            font-family: "Noto Sans KR";
+            font-size: 13px !important;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 18px !important; /* 138.462% */
+            letter-spacing: -0.26px !important;
+          }
+          @media (min-width: 1140px) {
+            .xe-btn-wrapper222 {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: row;
+              gap: 20px;
+            }
+            .btn-xe-grid-container {
+              background-color: #005ec4;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 14px 20px !important;
+              gap: 10px !important;
+            }
+          }
+</style>
+        <div class="xe-btn-wrapper222" style="margin-top: 30px"> <a class="btn-xe-grid-container" href="https://form.naver.com/response/Hw4RrVcDvY3oyKKuvegXjg" target="_blank"><span>전입 신청</span> <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"> <path d="M15.8537 6.64101L12.4375 3.00091L11.67 3.88837C11.3991 4.10898 11.1859 4.30954 11.0304 4.49004C10.8749 4.67054 10.7971 4.76079 10.7971 4.76079C10.7971 4.76079 11.053 5.02653 11.5646 5.55801C12.0763 6.08948 12.6632 6.74129 13.3254 7.51344L15.9591 10.2661L13.4308 13.0187C12.7184 13.7909 12.1014 14.4427 11.5797 14.9742C11.058 15.5056 10.7971 15.7714 10.7971 15.7714C10.7971 15.7714 10.8699 15.8616 11.0153 16.0421C11.1608 16.2226 11.3439 16.4232 11.5646 16.6438L12.3322 17.5312L15.7484 13.8911C16.24 13.3998 16.7015 12.9335 17.1329 12.4923C17.5643 12.051 17.938 11.665 18.2541 11.334C18.5701 11.0031 18.8184 10.7424 18.999 10.5519C19.1796 10.3613 19.2699 10.2661 19.2699 10.2661C19.2699 10.2661 19.1796 10.1708 18.999 9.98029C18.8184 9.78976 18.5726 9.52903 18.2616 9.19811C17.9506 8.8672 17.5894 8.48112 17.1781 8.0399C16.7667 7.59867 16.3253 7.13238 15.8537 6.64101ZM1 10.9279V8.9424H14.7551L15.9591 10.2661L15.2969 10.9279H1Z" fill="white"></path> </svg> </a></div>
+    </div>
+    <!-- 확인 섹션 -->
+    
+    <div class="accordion"><svg class="xe-plus-icon" fill="none" viewbox="0 0 50 55" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z" fill="#005EC4" fill-rule="evenodd"></path></svg> <svg class="xe-minus-icon" fill="none" viewbox="0 0 50 55" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z" fill="#005EC4" fill-rule="evenodd"></path></svg>
+    
+    <p>확인</p>
+    </div>
+    
+    <div class="accordion-content">전입 면접이나 합격자는 모두 개별 연락을 통해 누락되는 일이 없도록 진행됩니다.<br> 단, 부재시 1회 문자 발송 후 1일 경과 시 포기로 간주됩니다.
+    <ul>
+        <li>면접 일정 : 결원 발생 시 개별 연락</li>
+        <li>합격자 통보 : 면접 후 개별 연락</li>
+    </ul>
+    </div>
+    </div>
+    <script>
+          $(document).ready(function () {
+            // 기본적으로 첫 번째 아코디언 항목이 열려있음
+            $(".accordion").first().addClass("active");
+            $(".accordion").first().next(".accordion-content").show();
+    
+            // 아코디언 클릭 이벤트 처리
+            $(".accordion").click(function () {
+              // 클릭된 아코디언이 열려있다면 닫기
+              if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+                $(this).next(".accordion-content").slideUp(200);
+              } else {
+                // 다른 모든 아코디언을 닫기
+                $(".accordion").removeClass("active");
+                $(".accordion-content").slideUp(200);
+    
+                // 클릭된 아코디언을 열기
+                $(this).addClass("active");
+                $(this).next(".accordion-content").slideDown(200);
+              }
+            });
+          });
+        </script>

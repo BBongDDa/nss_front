@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <style type="text/css">
+        .container {
+          width: 100% !important;
+        }
+        .container iframe {
+          width: 100% !important;
+          aspect-ratio: 16/9 !important;
+          height: auto !important;
+        }
+        .sub-menu-title {
+          display: flex !important;
+        }
+        .xe-lnb-del-flex-col {
+          flex-direction: column;
+        }
+        .xe-sub-banner-wrap {
+          display: none;
+        }
+        .xe-lnb-del-trigger {
+          display: none !important;
+        }
+        .container p {
+          word-break: keep-all !important;
+          margin: 0 !important;
+        }
+        .main-title {
+          margin: 0 !important;
+          color: var(--1, #001226) !important;
+          font-family: "Noto Sans KR" !important;
+          font-size: 27px !important;
+          font-style: normal !important;
+          font-weight: 700 !important;
+          line-height: 36px !important; /* 133.333% */
+          letter-spacing: -1.08px !important;
+        }
+        .description {
+          color: var(--1, #001226) !important;
+          font-family: "Noto Sans KR" !important;
+          font-size: 16px !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          line-height: 25px !important; /* 156.25% */
+          letter-spacing: -0.8px !important;
+        }
+        .content-wrapper {
+          margin-bottom: 60px;
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 20px !important;
+        }
+        .full-width {
+          width: 100% !important;
+        }
+        .slide-aspect {
+          aspect-ratio: 50 / 37.5 !important;
+        }
+        .swiper-pagination-custom {
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+          margin-top: 20px !important;
+        }
+        .xe-swiper-wrapper {
+          width: 100% !important;
+          max-width: 85% !important;
+          margin: 0 auto !important;
+          position: relative !important;
+        }
+        .community-swiper-1 {
+          width: 100% !important;
+        }
+        .swiper-button-next-custom svg,
+        .swiper-button-prev-custom svg {
+          width: 20px !important;
+        }
+        .swiper-button-next-custom {
+          position: absolute !important;
+          right: -25px !important;
+          top: 35% !important;
+          z-index: 50 !important;
+        }
+        .swiper-button-prev-custom {
+          position: absolute !important;
+          left: -25px !important;
+          top: 35% !important;
+          z-index: 50 !important;
+        }
+        @media (min-width: 1140px) {
+          .main-title {
+            color: var(--1, #001226) !important;
+            font-family: "Noto Sans KR" !important;
+            font-size: 32px !important;
+            font-style: normal !important;
+            font-weight: 700 !important;
+            line-height: 35px !important; /* 109.375% */
+          }
+          .description {
+            color: var(--1, #001226) !important;
+            font-family: "Noto Sans KR" !important;
+            font-size: 18px !important;
+            font-style: normal !important;
+            font-weight: 400 !important;
+            line-height: 27px !important; /* 150% */
+            letter-spacing: -0.18px !important;
+          }
+          .content-wrapper {
+            gap: 30px !important;
+          }
+          .swiper-pagination-custom {
+            margin-top: 40px !important;
+          }
+          .xe-swiper-wrapper {
+            width: 100% !important;
+            max-width: 80% !important;
+            margin: 0 auto !important;
+          }
+          .community-swiper-1 {
+            width: 100% !important;
+          }
+          .swiper-button-next-custom {
+            position: absolute !important;
+            right: -60px !important;
+            top: 40% !important;
+            z-index: 50 !important;
+          }
+          .swiper-button-prev-custom {
+            position: absolute !important;
+            left: -60px !important;
+            top: 40% !important;
+            z-index: 50 !important;
+          }
+          .swiper-button-next-custom svg,
+          .swiper-button-prev-custom svg {
+            width: 40px !important;
+          }
+        }
+      </style>
+      <!-- 메인 제목 -->
+      <div class="content-wrapper">
+        <p class="description">
+          남성 학습 공동체는 학생들의 배움과 성장을 함께 축하하고 격려하며, 성장
+          마인드셋을 개발하고 독립적이고 주도적인 학습자로 성장할 수 있도록
+          지원합니다. 예로, 학생들은 탐구 단원을 통해 습득한 지식과 학습 기능을
+          설명하고 발표하는 시간을 가집니다. 이를 ‘UOI Celebration’이라 하며,
+          이때 학부모님, 타 학년 학생들, 그리고 교직원들을 초대해 배움을
+          발표하고 함께 축하합니다. 이 행사를 통해 학생들은 자신의 탐구 내용을
+          설명하며 개념적 이해와 지식을 더욱 견고히 다질 기회를 얻게 됩니다.
+          남성의 자랑은 바로 이러한 배움과 성장을 축하하는 데 있습니다.
+        </p>
+
+        <div
+          style="
+            width: 100%;
+            aspect-ratio: 120/67;
+            background-size: cover;
+            background-position: center;
+            background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/uoi_1.png');
+          "
+        ></div>
+
+        <div class="xe-swiper-wrapper">
+          <div class="swiper community-swiper-1" style="position: relative">
+            <div class="swiper-wrapper">
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/1.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/2.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/3.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/4.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/5.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/6.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/7.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/8.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/9.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/10.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/12.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/13.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/14.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/15.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/16.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/17.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/18.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/19.png');
+                "
+              >
+                &nbsp;
+              </div>
+
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/20.png');
+                "
+              >
+                &nbsp;
+              </div>
+              <div
+                class="swiper-slide slide-aspect"
+                style="
+                  background-size: cover;
+                  background-position: center;
+                  background-image: url('/plugins/custom_plugin/simple_page/241105/assets/uoi/21.png');
+                "
+              >
+                &nbsp;
+              </div>
+            </div>
+
+            <div class="swiper-pagination-custom">&nbsp;</div>
+          </div>
+
+          <div class="swiper-button-next-custom xe-custom-next-1">
+            <svg
+              fill="none"
+              viewbox="0 0 40 40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M29.1312 21.1312L14.7334 35.529C14.585 35.6782 14.4087 35.7965 14.2144 35.8774C14.0202 35.9583 13.8119 36 13.6016 36.0003C13.3912 36.0006 13.1828 35.9593 12.9884 35.8789C12.7939 35.7985 12.6173 35.6806 12.4685 35.5318C12.3198 35.3831 12.2018 35.2064 12.1214 35.012C12.041 34.8176 11.9997 34.6092 12 34.3988C12.0003 34.1884 12.042 33.9801 12.1229 33.7859C12.2037 33.5917 12.3221 33.4153 12.4712 33.2669L25.738 20.0002L12.4712 6.73339C12.3221 6.58498 12.2037 6.40862 12.1229 6.21439C12.042 6.02016 12.0003 5.81189 12 5.6015C11.9997 5.39112 12.041 5.18274 12.1214 4.98832C12.2018 4.7939 12.3198 4.61725 12.4685 4.46849C12.6173 4.31972 12.7939 4.20177 12.9884 4.12138C13.1828 4.04099 13.3912 3.99974 13.6016 4C13.8119 4.00026 14.0202 4.04202 14.2144 4.12289C14.4087 4.20376 14.585 4.32215 14.7334 4.47128L29.1312 18.8691C29.2798 19.0176 29.3977 19.1939 29.4781 19.388C29.5585 19.5821 29.5999 19.7901 29.5999 20.0002C29.5999 20.2102 29.5585 20.4182 29.4781 20.6123C29.3977 20.8064 29.2798 20.9827 29.1312 21.1312Z"
+                fill="#00244E"
+              ></path>
+            </svg>
+          </div>
+
+          <div class="swiper-button-prev-custom xe-custom-prev-1">
+            <svg
+              fill="none"
+              viewbox="0 0 40 40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.8688 18.8688L25.2666 4.47098C25.415 4.32185 25.5913 4.20346 25.7856 4.12259C25.9798 4.04172 26.1881 3.99996 26.3984 3.9997C26.6088 3.99944 26.8172 4.04068 27.0116 4.12107C27.2061 4.20146 27.3827 4.31942 27.5315 4.46818C27.6802 4.61695 27.7982 4.7936 27.8786 4.98802C27.959 5.18244 28.0003 5.39081 28 5.6012C27.9997 5.81159 27.958 6.01986 27.8771 6.21409C27.7963 6.40831 27.6779 6.58468 27.5288 6.73309L14.262 19.9998L27.5288 33.2666C27.6779 33.415 27.7963 33.5914 27.8771 33.7856C27.958 33.9798 27.9997 34.1881 28 34.3985C28.0003 34.6089 27.959 34.8173 27.8786 35.0117C27.7982 35.2061 27.6802 35.3827 27.5315 35.5315C27.3827 35.6803 27.2061 35.7982 27.0116 35.8786C26.8172 35.959 26.6088 36.0003 26.3984 36C26.1881 35.9997 25.9798 35.958 25.7856 35.8771C25.5913 35.7962 25.415 35.6778 25.2666 35.5287L10.8688 21.1309C10.7202 20.9824 10.6023 20.8061 10.5219 20.612C10.4415 20.4179 10.4001 20.2099 10.4001 19.9998C10.4001 19.7898 10.4415 19.5818 10.5219 19.3877C10.6023 19.1936 10.7202 19.0173 10.8688 18.8688Z"
+                fill="#00244E"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var swiper1 = new Swiper(".community-swiper-1", {
+        slidesPerView: 1.5,
+        loop: true,
+        autoplay: true,
+        spaceBetween: 12,
+        direction: "horizontal",
+        navigation: {
+          nextEl: ".xe-custom-next-1",
+          prevEl: ".xe-custom-prev-1",
+        },
+        pagination: {
+          el: ".swiper-pagination-custom",
+        },
+        mousewheel: false,
+        keyboard: true,
+        breakpoints: {
+          // when window width is >= 768px
+          768: {
+            direction: "horizontal",
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+        },
+      });
+    </script>
+    <script>
+      $(document).ready(function () {
+        // 기본적으로 첫 번째 아코디언 항목이 열려있음
+        $(".accordion").first().addClass("active");
+        $(".accordion").first().next(".accordion-content").show();
+
+        // 아코디언 클릭 이벤트 처리
+        $(".accordion").click(function () {
+          // 클릭된 아코디언이 열려있다면 닫기
+          if ($(this).hasClass("active")) {
+            $(this).removeClass("active");
+            $(this).next(".accordion-content").slideUp(200);
+          } else {
+            // 다른 모든 아코디언을 닫기
+            $(".accordion").removeClass("active");
+            $(".accordion-content").slideUp(200);
+
+            // 클릭된 아코디언을 열기
+            $(this).addClass("active");
+            $(this).next(".accordion-content").slideDown(200);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

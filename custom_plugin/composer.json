@@ -1,0 +1,125 @@
+{
+  "name": "xpressengine-plugin/custom_plugin",
+  "description": "커스텀 플러그인",
+  "keywords": [
+    "xpressengine",
+    "plugin"
+  ],
+  "license": "LGPL-3.0-or-later",
+  "version": "1.0.0",
+  "type": "xpressengine-plugin",
+  "support": {
+    "email": "contact@xpressengine.com"
+  },
+  "authors": [
+    {
+      "name": "XEHub Developers",
+      "email": "contact@xpressengine.com",
+      "homepage": "https://www.xpressengine.com",
+      "role": "Developer"
+    }
+  ],
+  "extra": {
+    "xpressengine": {
+      "title": "커스텀 플러그인",
+      "component": {
+        "theme/custom_plugin@CustomTheme": {
+          "name": "커스텀 플러그인 테마",
+          "description": "커스텀 플러그인 테마",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Components\\Themes\\CustomTheme\\CustomTheme"
+        },
+        "widget/xpressengine@html/skin/custom_plugin@dummy_test_skin": {
+          "name": "DummyTestSkin skin",
+          "description": "The skin supported by Custom_plugin plugin.",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Skins\\DummyTestSkin\\dummy_test_skin"
+        },
+        "theme/custom_plugin@CustomThemeSub": {
+          "name": "커스텀 플러그인 테마 서브",
+          "description": "커스텀 플러그인 테마 서브",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Components\\Themes\\CustomThemeSub\\CustomThemeSub"
+        },
+        "widget/banner@widget/skin/custom_plugin@scnumainsubvisualbanner": {
+          "name": "메인 서브 배너 skin",
+          "description": "The skin supported by Custom_plugin plugin.",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Skins\\ScnuMainSubVisualBanner\\ScnuMainSubVisualBanner"
+        },
+        "widget/custom_plugin@customtab": {
+          "name": "커스텀 탭 위젯",
+          "description": "커스텀 탭을 화면에 뿌려주는 위젯",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Components\\Widgets\\CustomTab\\CustomTabWidget"
+        },
+        "widget/custom_plugin@customtab/skin/custom_plugin@basicCustomTab": {
+          "name": "커스텀 탭 위젯 Basic 스킨",
+          "description": "커스텀 탭 위젯 Basic 스킨",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Components\\Skins\\CustomTab\\BasicCustomTab\\BasicCustomTabSkin"
+        },
+        "widget/board@list/skin/custom_plugin@NoticeCustumTabArticleListWidgetSkin": {
+          "name": " NOTICE 커스텀 탭 게시물 리스트 위젯 스킨",
+          "description": " NOTICE 커스텀 탭 게시물 리스트 위젯 스킨",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Skins\\NoticeCustumTabArticleListWidgetSkin\\NoticeCustumTabArticleListWidgetSkin"
+        },
+        "module/board@board/skin/custom_plugin@scnucategorycommonboard": {
+          "name": "카테고리 있는 기본 게시판 스킨",
+          "description": "카테고리 있는 기본 게시판 스킨",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Components\\Skins\\Boards\\ScnuCategoryCommonBoard\\ScnuCategoryCommonBoardSkin"
+        },
+        "module/board@board/skin/custom_plugin@scnucategorygaellryboard": {
+          "name": "카테고리 있는 갤러리 게시판 스킨",
+          "description": "카테고리 있는 갤러리 게시판 스킨",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Components\\Skins\\Boards\\ScnuCategoryGalleryBoard\\ScnuCategoryGalleryBoardSkin"
+        },
+        "module/board@board/skin/custom_plugin@scnueditiongaellryboard": {
+          "name": "갤러리 게시판 스킨 1",
+          "description": "갤러리 게시판 스킨 1",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Components\\Skins\\Boards\\ScnuEditionGalleryBoard\\ScnuEditionGalleryBoardSkin"
+        },
+        "module/board@board/skin/custom_plugin@scnumembergaellryboard": {
+          "name": "갤러리 게시판 스킨 2",
+          "description": "갤러리 게시판 스킨 2",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Components\\Skins\\Boards\\ScnuMemberGalleryBoard\\ScnuMemberGalleryBoardSkin"
+        },
+        "widget/xpressengine@html/skin/custom_plugin@NssHtmlTestSkin": {
+          "name": "남성초 메인 스킨 skin",
+          "description": "The skin supported by Custom_plugin plugin.",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Skins\\NssHtmlTestSkin\\NssHtmlTestSkin"
+        },
+        "widget/xpressengine@html/skin/custom_plugin@NssEditorArcSkin": {
+          "name": "남성초 에디터 스킨 skin",
+          "description": "The skin supported by Custom_plugin plugin.",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Skins\\NssEditorArcSkin\\NssEditorArcSkin"
+        },
+        "module/board@board/skin/custom_plugin@NssBoardPubliSkin": {
+          "name": "퍼블리케이션 게시판 스킨",
+          "description": "퍼블리케이션 게시판 스킨",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Skins\\NssBoardPubliSkin\\NssBoardPubliSkin"
+        },
+        "module/board@board/skin/custom_plugin@ScnuNoticeGalleryBoard": {
+          "name": "공지사항 갤러리 게시판 스킨",
+          "description": "공지사항 갤러리 게시판 스킨",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Components\\Skins\\Boards\\ScnuNoticeGalleryBoard\\ScnuNoticeGalleryBoard"
+        },
+        "module/board@board/skin/custom_plugin@AwardGalleryBoard": {
+          "name": "수상 갤러리 게시판 스킨",
+          "description": "수상 갤러리 게시판 스킨",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Components\\Skins\\Boards\\AwardGalleryBoard\\AwardGalleryBoard"
+        },
+        "widget/xpressengine@html/skin/custom_plugin@NssSitemapSkin": {
+          "name": "남성초 사이트맵 스킨 skin",
+          "description": "The skin supported by Custom_plugin plugin.",
+          "class": "XEHub\\XePlugin\\CustomPlugin\\Skins\\NssSitemapSkin\\NssSitemapSkin"
+        }
+      }
+    }
+  },
+  "require": {
+    "xpressengine/xpressengine": "^3.0.15"
+  },
+  "autoload": {
+    "psr-4": {
+      "XEHub\\XePlugin\\CustomPlugin\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  }
+}

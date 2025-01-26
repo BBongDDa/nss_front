@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <style type="text/css">
+        .sub-menu-title {
+          display: flex !important;
+        }
+        .xe-sub-banner-wrap {
+          display: none !important;
+        }
+        @media (min-width: 1140px) {
+          .container {
+            margin-top: 145px;
+          }
+        }
+
+        .container {
+          width: 100%;
+          font-family: "Noto Sans KR", sans-serif !important;
+          color: #001226 !important;
+        }
+        .container p {
+          word-break: keep-all;
+          margin: 0 !important;
+        }
+
+        .main-title {
+          font-size: 24px !important;
+          font-weight: bold !important;
+          color: #00509e !important;
+          margin-bottom: 10px !important;
+        }
+
+        .subtitle {
+          font-family: "Noto Sans KR" !important;
+          font-size: 22px !important;
+          font-style: normal !important;
+          font-weight: 700 !important;
+          line-height: 31px !important; /* 140.909% */
+          color: #001226 !important;
+        }
+
+        .description {
+          color: #001226 !important;
+          font-family: "Noto Sans KR" !important;
+          font-size: 16px !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          line-height: 25px !important; /* 156.25% */
+          letter-spacing: -0.8px;
+        }
+
+        .image-container {
+          width: 100%;
+          border-radius: 0px;
+          overflow: hidden;
+        }
+
+        .image-container img {
+          width: 100%;
+          height: auto;
+        }
+        .accordion {
+          font-size: 18px !important;
+          color: #001226 !important;
+          padding: 0;
+          cursor: pointer;
+          border-bottom: 1px solid #dae1e9;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          background-color: #fff;
+          position: relative;
+          transition: background-color 0.3s, border-left 0.3s;
+        }
+        .accordion.active {
+          border-left: 4px solid #00509e;
+          color: #00509e !important;
+        }
+        .accordion:hover {
+          background-color: #e6f1fc;
+          border-left: 4px solid #ffea00;
+          color: #00509e !important;
+        }
+        .accordion.active p {
+          font-size: 14px !important;
+          font-style: normal !important;
+          font-weight: 700 !important;
+          line-height: 18px !important; /* 128.571% */
+          color: #00509e !important;
+        }
+        .accordion p {
+          font-size: 14px !important;
+          font-style: normal !important;
+          font-weight: 700 !important;
+          line-height: 18px !important; /* 128.571% */
+          color: #001226 !important;
+        }
+
+        .xe-plus-icon {
+          width: 50px;
+        }
+
+        .xe-minus-icon {
+          display: none;
+          width: 50px;
+        }
+
+        .accordion.active .xe-plus-icon {
+          display: none !important;
+        }
+
+        .accordion.active .xe-minus-icon {
+          display: flex !important;
+        }
+
+        .accordion-content {
+          display: none;
+          background: linear-gradient(180deg, #fff 0%, #edf0f3 11.61%);
+          padding: 35px 20px;
+          color: #001226 !important;
+          font-family: "Noto Sans KR" !important;
+          font-size: 16px !important;
+          font-style: normal !important;
+          font-weight: 400 !important;
+          line-height: 25px !important; /* 156.25% */
+          letter-spacing: -0.64px;
+        }
+
+        .accordion.active + .accordion-content {
+          display: block;
+        }
+
+        .accordion-content ul {
+          list-style: disc;
+          padding-left: 20px;
+          list-style-type: disc !important;
+          margin-block-start: 1em !important;
+          margin-block-end: 1em !important;
+          margin-inline-start: 0px !important;
+          margin-inline-end: 0px !important;
+          padding-inline-start: 40px !important;
+          unicode-bidi: isolate !important;
+        }
+
+        .accordion-content ul li {
+          margin-bottom: 10px;
+        }
+
+        .accordion-content a {
+          color: #00509e !important;
+          text-decoration: none;
+        }
+
+        .accordion-content a:hover {
+          text-decoration: underline;
+        }
+
+        .highlight-box {
+          background: #edf0f3;
+          padding: 20px;
+          margin-bottom: 20px;
+          border-left: 6px solid #f1c400;
+        }
+
+        .link-button {
+          background-color: #00509e;
+          color: #ffffff !important;
+          padding: 15px 20px;
+          display: inline-block;
+          text-align: center;
+          font-family: "Noto Sans KR" !important;
+          font-size: 16px !important;
+          font-weight: 700 !important;
+          text-decoration: none;
+          margin-top: 20px;
+        }
+
+        .link-button:hover {
+          background-color: #003a75;
+        }
+
+        @media (min-width: 1140px) {
+          .main-title {
+            font-size: 27px !important;
+            margin-bottom: 20px !important;
+          }
+
+          .description {
+            font-size: 18px !important;
+            margin-bottom: 30px !important;
+          }
+
+          .accordion {
+            font-size: 20px !important;
+          }
+          .accordion p {
+            font-size: 15px !important;
+          }
+          .accordion.active p {
+            font-size: 15px !important;
+          }
+
+          .accordion-content {
+            font-size: 18px !important;
+            padding: 40px 30px;
+          }
+        }
+
+        .section-container {
+          box-sizing: border-box;
+          width: 100%;
+          background-color: #edf0f3;
+          padding: 30px 20px !important;
+          margin-bottom: 40px;
+        }
+
+        @media (min-width: 1140px) {
+          .section-container {
+            padding: 40px 30px !important;
+            margin-bottom: 60px;
+          }
+        }
+
+        .section {
+          margin-bottom: 30px !important;
+        }
+
+        @media (min-width: 1140px) {
+          .section {
+            margin-bottom: 40px !important;
+          }
+        }
+
+        .section-title {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px !important;
+        }
+
+        @media (min-width: 1140px) {
+          .section-title {
+            margin-bottom: 18px !important;
+          }
+        }
+
+        .section-title .indicator {
+          width: 6px !important;
+          height: 30px !important;
+          background-color: #f1c400;
+          margin-right: 18px !important;
+        }
+
+        @media (min-width: 1140px) {
+          .section-title .indicator {
+            width: 6px !important;
+            height: 30px !important;
+            background-color: #f1c400;
+            margin-right: 30px !important;
+          }
+        }
+
+        .section-title p {
+          color: #001226 !important;
+          font-size: 22px !important;
+          font-weight: bold;
+          margin: 0;
+        }
+
+        .section-content {
+          color: #001226 !important;
+          font-family: "Noto Sans KR";
+          font-size: 16px !important;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 25px; /* 156.25% */
+          letter-spacing: -0.48px;
+        }
+
+        @media (min-width: 1140px) {
+          .section-content {
+            color: #001226 !important;
+            font-family: "Noto Sans KR";
+            color: #001226 !important;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 27px; /* 150% */
+            letter-spacing: -0.36px;
+          }
+        }
+
+        .section-container {
+          width: 100%;
+          background-color: #edf0f3;
+          padding: 30px 20px !important;
+          margin-bottom: 40px;
+        }
+
+        @media (min-width: 1140px) {
+          .section-container {
+            padding: 40px 30px !important;
+            margin-bottom: 60px;
+          }
+        }
+
+        .section-title {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px !important;
+        }
+
+        @media (min-width: 1140px) {
+          .section-title {
+            margin-bottom: 25px !important;
+          }
+        }
+
+        .section-title .indicator {
+          width: 6px !important;
+          height: 100% !important;
+          background-color: #f1c400;
+          margin-right: 18px !important;
+        }
+
+        @media (min-width: 1140px) {
+          .section-title .indicator {
+            width: 6px !important;
+            height: 100% !important;
+            background-color: #f1c400;
+            margin-right: 30px !important;
+          }
+        }
+
+        .section-title p {
+          color: #001226 !important;
+          font-size: 22px !important;
+          font-weight: bold;
+          margin: 0;
+        }
+
+        .section-content {
+          color: #001226 !important;
+          font-family: "Noto Sans KR";
+          font-size: 16px !important;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 25px; /* 156.25% */
+          letter-spacing: -0.48px;
+        }
+
+        .btn-xe-grid-container:hover {
+          opacity: 0.8;
+        }
+        .btn-xe-grid-container {
+          background-color: #005ec4;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 16px 20px !important;
+          gap: 10px !important;
+          width: 100%;
+          max-width: 280px !important;
+          text-decoration: none !important;
+        }
+        .btn-xe-grid-container svg {
+          width: 18px !important;
+        }
+        .btn-xe-grid-container span {
+          color: var(--9, #fff) !important;
+          text-align: center;
+          font-family: "Noto Sans KR";
+          font-size: 13px !important;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 18px !important; /* 138.462% */
+          letter-spacing: -0.26px !important;
+        }
+        @media (min-width: 1140px) {
+          .section-content {
+            color: #001226 !important;
+            font-family: "Noto Sans KR";
+            color: #001226 !important;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 27px; /* 150% */
+            letter-spacing: -0.36px;
+          }
+          .btn-xe-grid-container {
+            background-color: #005ec4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px 20px !important;
+            gap: 10px !important;
+          }
+        }
+        .xe-btn-wrapper {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          gap: 10px;
+        }
+        @media (min-width: 1140px) {
+          .xe-btn-wrapper {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 20px;
+          }
+        }
+        .accordion-content .section {
+          margin: 0 !important;
+        }
+      </style>
+      <!-- 이미지 영역 -->
+      <div class="image-container" style="margin-bottom: 50px">
+        <img
+          alt=""
+          class="__xe_image"
+          src="/plugins/custom_plugin/simple_page/assets/img/policy/1.png"
+        />
+      </div>
+
+      <!-- 아코디언 1 -->
+
+      <div class="accordion">
+        <svg
+          class="xe-plus-icon"
+          fill="none"
+          viewbox="0 0 50 55"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z"
+            fill="#005EC4"
+            fill-rule="evenodd"
+          ></path>
+        </svg>
+        <svg
+          class="xe-minus-icon"
+          fill="none"
+          viewbox="0 0 50 55"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z"
+            fill="#005EC4"
+            fill-rule="evenodd"
+          ></path>
+        </svg>
+
+        <p>언어정책</p>
+      </div>
+
+      <div class="accordion-content">
+        <div class="section">
+          <p class="section-content">
+            남성초등학교 전 구성원은 언어 사용 역량이 개인의 발전, 문화적
+            정체성, 문화 간 이해를 탐구하고 유지하는 데 필수임을 인지하고
+            있습니다. 언어는 사회적 의사소통의 주요 도구이며 의미와 지식을
+            연결하는 중요한 수단입니다. 인간의 인지적 성장 발달에도 중요한
+            영향을 끼치며 인간 존재에 대한 지식을 구축하는 주요 도구입니다. 언어
+            사용 능력은 읽고 쓰는 학습의 핵심 능력이므로 학교에서의 성공적인
+            교육과정 수행과 밀접한 관련이 있습니다. 따라서 모국어 학습 환경
+            구축을 지원하고 다양하게 언어를 습득하게 하는 효과적 언어 정책
+            수립은 학생들의 언어 사용 역량을 길러주는데 매우 중요한 역할을 할 것
+            입니다.
+          </p>
+          <br />
+          <br />
+          <div class="section-title">
+            <div class="indicator">&nbsp;</div>
+
+            <p>언어 철학 (Language Philosophy)</p>
+          </div>
+
+          <p class="section-content">
+            남성초등학교 교육공동체는 IB와 학교 교육 목표에 따라 국제적 소양을
+            갖춘 인재를 양성하기 위해 다언어를 통한 학습을 지향합니다. 남성 학습
+            공동체(학생, 교사)는 학생들의 모든 학습(탐구학습 등) 과정에서
+            효과적인 결과를 얻을 수 있도록 모국어 및 다양한 언어 교육을
+            실시합니다. 이 언어정책 문서는 언어 교육뿐 아니라 평가정책, 입학
+            정책 등 학교 교육의 모든 정책과 연계하여 실행합니다. 남성초등학교는
+            언어가 학습, 사고(관찰, 성찰, 통찰), 의사소통에 있어 중요함을
+            인지합니다. 언어 발달 단계 및 발달 접근 방식이 각 학습자마다
+            다르다는 것을 이해합니다. 학습자, 교사, 학부모 및 모든 학습 공동체
+            일원의 모국어 학습 상황를 존중하고 지원합니다. 언어학습이 문화의
+            정체성 및 다양성을 열린 관점으로 이해하는데 도움을 줄 수 있음을
+            이해합니다. 언어 학습이 국제 인재 소양을 길러 줄수 있음을 알고 모든
+            탐구 프로그램에서 언어가 골고루 발달하도록 지원합니다. 언어는 모든
+            교과 영역에 잠재되어 있으며 언어를 배우는 것, 언어에 대해 배우는 것,
+            언어를 통해 배우는 것이 필수적임을 이해하고 지원합니다.
+          </p>
+          <br />
+          <br />
+          <div class="section-title">
+            <div class="indicator">&nbsp;</div>
+
+            <p>언어정책의 목적 (Purpose of Language Policy)</p>
+          </div>
+
+          <p class="section-content">
+            모든 학년에게 적용되는 이 문서의 목적은 다음과 같습니다.<br />
+            IB 프로그램 전반에 걸쳐 언어 학습에 대해 표현된 생각과 통합합니다.
+            <br />
+            학교의 IB 프로그램에서 언어 및 학습에 대한 일반적인 토대와 이해를
+            명시합니다.
+          </p>
+          <br />
+          <br />
+          <div class="section-title">
+            <div class="indicator">&nbsp;</div>
+
+            <p>언어 교육의 실행 (Practices)</p>
+          </div>
+
+          <p class="section-content">
+            언어는 모든 교육과정 활동과 깊이 있게 관련이 있으며 특히 학생들은
+            학습 활동 시 언어를 통해 유의미한 결과를 도출하므로 탐구 활동에서
+            중요한 역할을 합니다.
+          </p>
+
+          <ul>
+            <li>
+              남성초등학교는 대한민국 교육부에서 인가를 받은 사립초등학교로서
+              학교 공동체의 언어는 공식적으로 한국어 입니다.
+            </li>
+            <li>
+              남성초등학교의 교육과정 활동 언어는 한국어와 영어를 사용합니다.
+              한국 교육과정은 한국어로 수업 진행하며 캠브리지국제교육과정은
+              영어로 수업 진행됩니다. 교육과정 운영 전반에 걸쳐 언어 교육
+              (한국어, 영어)을 실시하며 학생의 개념적 이해의 발달을 돕기 위해
+              한국어와 영어를 교실에서 함께 사용합니다.
+            </li>
+          </ul>
+          <br />
+          <p class="section-content">
+            한국어의 체계적 발달을 위해 다음과 같은 교육이 진행되고 있습니다.
+          </p>
+
+          <ul>
+            <li>
+              모든 학급은 국어 학습 시간을 충분히 확보하여 독립적으로 언어에
+              대한 교육을 실시하며 다른 교과 시간에도 국어를 활용한 교육을
+              실시합니다.
+            </li>
+            <li>
+              한국어 집중 교육 : 1학년 학생은 한국어 집중 교육을 실시하고
+              학생들의 언어 수준에 따라 담임 선생님이 개별화 교육을 진행합니다.
+            </li>
+            <li>
+              한국어가 모국어가 아닌 학생들을 위해서는 학생의 모국어로 도서 및
+              자료를 제공하며 다양한 언어 사용 학습 환경을 제공합니다.
+            </li>
+          </ul>
+          <br />
+          <p class="section-content">
+            영어의 원활한 발달을 위해 다음과 같은 교육이 진행되고 있습니다.
+          </p>
+
+          <ul>
+            <li>학생들은 추가 언어로 영어를 1학년에서 6학년까지 학습합니다.</li>
+            <li>
+              일부 학생들에게 영어는 모국어 수준으로 능숙한 경우도 있습니다.
+            </li>
+            <li>
+              다양한 평가 방식을 통해 학생들의 영어 습득 단계를 진단하고 단계에
+              맞추어 다양한 교수법을 활용하여 개별화 수업을 진행합니다.
+            </li>
+            <li>
+              일부 영어 수업은 다양한 영어 습득 단계의 학생들이 함께 탐구 단원을
+              학습하게 되며 이때 교사는 학생들의 언어 습득 단계에 따라 다양한
+              학습 전략을 통해 개별화 학습 기회를 제공합니다.
+            </li>
+          </ul>
+          <br />
+          <p class="section-content">
+            한국어 영어외의 모국어 지원 (Mother Tongue)
+          </p>
+
+          <ul>
+            <li>
+              한국어와 영어외의 언어를 모국어로 하는 학생들의 모국어 교육과
+              문화적 정체성 확립을 위해 학교는 도서관 내 이중언어 도서, 제 2
+              외국어 도서, 다문화 도서 코너 제공하고 필요시 학부모의 모국어로 된
+              가정통신문을 제공하며 학생과 학부모 상담 시 통역을 제공합니다.
+              필요시에 지역교육청과 연계한 다문화 언어지원프로그램도 제공할 수
+              있습니다.
+            </li>
+          </ul>
+          <br />
+          <br />
+          <div class="section-title">
+            <div class="indicator">&nbsp;</div>
+
+            <p>정책검토 (Policy Review)</p>
+          </div>
+
+          <p class="section-content">
+            남성초등학교 언어 정책은 매년 검토합니다. 이 검토는 PYP IB 프로글매
+            코디네이터, 영어 과목 교사 및 한국어 교사, 사서교사로 구성된 언어
+            정책 운영 위원회를 통해 이루어지며 언어 학습에 대한 최신 연구와 언어
+            학습에 대한 최신 IB 간행물을 참고합니다. 정책에 대한 교사, 학부모 및
+            학생의 의견도 검토해서 고려할 수 있습니다. 정책의 최종 버전은
+            남성초등학교운영위원회가 승인합니다.
+          </p>
+          <br />
+          <br />
+          <div class="section-title">
+            <div class="indicator">&nbsp;</div>
+
+            <p>참고 문헌 (References)</p>
+          </div>
+
+          <p class="section-content">
+            교육부(2015). 초등학교 교육과정.<br />
+            IBO(2014). Programme Standards and Practices.<br />
+            IBO(2018). Enhanced PYP; Learning and teaching.<br />
+            IBO (2021). Guidelines for developing a school language policy
+          </p>
+        </div>
+        <div class="xe-btn-wrapper" style="margin-top: 30px">
+          <a
+            class="btn-xe-grid-container"
+            href="/plugins/custom_plugin/simple_page/assets/img/policy/NSES_Language_Policy_in_English_Updated.pdf"
+            target="_blank"
+            ><span>English Version</span>
+            <svg
+              fill="none"
+              height="20"
+              viewbox="0 0 20 20"
+              width="20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.8537 6.64101L12.4375 3.00091L11.67 3.88837C11.3991 4.10898 11.1859 4.30954 11.0304 4.49004C10.8749 4.67054 10.7971 4.76079 10.7971 4.76079C10.7971 4.76079 11.053 5.02653 11.5646 5.55801C12.0763 6.08948 12.6632 6.74129 13.3254 7.51344L15.9591 10.2661L13.4308 13.0187C12.7184 13.7909 12.1014 14.4427 11.5797 14.9742C11.058 15.5056 10.7971 15.7714 10.7971 15.7714C10.7971 15.7714 10.8699 15.8616 11.0153 16.0421C11.1608 16.2226 11.3439 16.4232 11.5646 16.6438L12.3322 17.5312L15.7484 13.8911C16.24 13.3998 16.7015 12.9335 17.1329 12.4923C17.5643 12.051 17.938 11.665 18.2541 11.334C18.5701 11.0031 18.8184 10.7424 18.999 10.5519C19.1796 10.3613 19.2699 10.2661 19.2699 10.2661C19.2699 10.2661 19.1796 10.1708 18.999 9.98029C18.8184 9.78976 18.5726 9.52903 18.2616 9.19811C17.9506 8.8672 17.5894 8.48112 17.1781 8.0399C16.7667 7.59867 16.3253 7.13238 15.8537 6.64101ZM1 10.9279V8.9424H14.7551L15.9591 10.2661L15.2969 10.9279H1Z"
+                fill="white"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- 아코디언 2 -->
+
+    <div class="accordion">
+      <svg
+        class="xe-plus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z"
+          fill="#005EC4"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="xe-minus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z"
+          fill="#005EC4"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+
+      <p>평가정책</p>
+    </div>
+
+    <div class="accordion-content">
+      <div class="section">
+        <div class="section-title">
+          <div class="indicator">&nbsp;</div>
+
+          <p>평가 철학 (Assessment Philosophy)</p>
+        </div>
+
+        <p class="section-content">
+          &lt;서로를 존중하고 창의적 탐구와 도전으로 세상을 변화시키는 글로벌
+          인재를 기른다&gt;는 비전선언문을 바탕으로 남성초등학교(이하 NSES)는
+          국가 교육과정의 평가 방향에 IB PYP 평가 철학을 반영하여 평가 정책을
+          수립하고 있습니다. 평가는 학생들이 학습 목표를 성공적으로
+          달성하였는지를 확인하기 위한 중요한 수단입니다. 교육과정 운영 시
+          학생과 교사는 협력하여 학습 목표를 설정하고 지식과 기능을 습득하며,
+          개념적 이해를 하게 되는 배움의 과정을 거칩니다. 이 과정을 관찰, 기록,
+          측정, 통지하는 지속적이고 통합적인 과정이 바로 평가입니다.
+          NSES의평가는 학생과 교사가 지속적으로 피드백을 주고 받으며, 성찰을
+          통해 자기주도 학습자로 성장하는 것을 지원합니다.
+        </p>
+        <br />
+        <br />
+        <div class="section-title">
+          <div class="indicator">&nbsp;</div>
+
+          <p>목적 (Purpose of Assessment)</p>
+        </div>
+
+        <p class="section-content">
+          NSES의 평가는 학교 교육과정의 중요한 부분이며 핵심 성취기준에 근거하여
+          이루어집니다. 학생들의 학습 과정은 PYP 프로그램의 기준과 실행에 따라
+          관찰, 기록, 측정, 통지됩니다.
+        </p>
+        <p class="section-content">
+          NSES에서 평가는 크게 세 가지 목적을 가지고 있습니다.
+        </p>
+
+        <ol>
+          <li>
+            학생의 학습 상황을 지원하여 배움에 대한 긍정적인 태도를 가지도록
+            합니다.
+          </li>
+          <li>
+            지식과 기능의 습득, 개념 이해의 구성을 촉진하여 학생의 학습 영역을
+            확장시킵니다.
+          </li>
+          <li>
+            교수학습의 효율성 향상을 위해 의미있는 데이터를 제공하며 학생의
+            전인적 성장을 지원합니다. 교육 공동체는 평가 결과를 지속적으로
+            공유함으로써 학교의 교육과정 실행과 효과 수준을 점검할 수 있습니다.
+            또한 학교 교육의 질을 향상시킬 수 있으며 교육과정 운영 시 발생하는
+            문제점에 대한 개선점을 도출하여 보완하고 발전할 수 있습니다. 각
+            구성원의 지향점은 다음과 같습니다.
+          </li>
+        </ol>
+
+        <ul>
+          <li>
+            학생 : 다양한 평가에 참여하고 평가 결과 분석을 통해 자신의 학습을
+            지속적으로 성찰하고 개선합니다. 학습 목표 도달을 위해 끊임없이
+            탐구하는 자기주도 학습자로 성장합니다.
+          </li>
+          <li>
+            교사 : 다양한 평가 전략을 통해 학생의 긍정적 학습 결과와 문제점을
+            파악하고, 학생 맞춤형 반성점과 개선점을 제공할 수 있습니다. 또한
+            지속적 성찰을 통해 교육과정과 교수법에 대한 전문성을 신장합니다.
+          </li>
+          <li>
+            학부모 : 평가 결과 환류를 통해 학생의 성장 과정을 이해하고, 학교와
+            학업 성취 결과를 공유함으로써 가정에서 학생 지도 방향을 확립하고
+            자기주도 학습자로 성장할 수 있도록 지원합니다.
+          </li>
+        </ul>
+
+        <br />
+        <br />
+        <div class="section-title">
+          <div class="indicator">&nbsp;</div>
+
+          <p>방침 (Assessment Princilple)</p>
+        </div>
+
+        <p class="section-content">
+          NSES의 평가는 모든 학습 과정중 투명하게 이루어집니다. NSES의 평가는
+          통합적 평가, 학습 지원을 위한 평가, 개별화 교육을 보장하는 평가로
+          이루어집니다.
+        </p>
+
+        <ul>
+          <li>
+            통합적 평가 : 교육과정 진행 시 학습 내용에 대한 적합한 관찰, 기록,
+            측정, 보고 등 다양한 평가 방법을 적용합니다. 학생과 교사는 함께
+            협력하여 학습 목표를 설정하고 학습활동을 계획하며 지식, 기능, 개념적
+            이해 과정을 효과적으로 운영하여 학습 목표에 도달합니다.
+          </li>
+
+          <li>
+            학습 지원을 위한 평가 : 학생의 학업 성취 수준의 확인과 학습 욕구
+            촉진을 위해 학습과정 중에 실시합니다. 학생과 교사는 지속적으로
+            피드백을 주고받으며 학습 수준의 향상이 어느정도 이루어져있는지
+            확인합니다. 학생, 학부모, 교사는 평가 결과를 공유합니다. 평가 결과에
+            따라 다음 학습을 계획하고 부족한 부분을 보완합니다.
+          </li>
+
+          <li>
+            개별화 교육을 보장하는 평가 : 학생의 다양한 특성(언어, 신체적 특성,
+            종교, 인지능력 등)을 고려하여 평가 기준, 방법, 내용 등을 결정하며,
+            개인 특성에 알맞은 평가를 실시합니다.
+          </li>
+        </ul>
+
+        <br />
+        <br />
+        <div class="section-title">
+          <div class="indicator">&nbsp;</div>
+
+          <p>평가 절차 (Process of assessment)</p>
+        </div>
+
+        <p class="section-content">
+          평가는 평가 계획, 평가, 결과 피드백 및 통지(가정 공유)의 절차를 통해
+          이루어지며, 교수·학습의 지속적 인 연구와 함께 보완 및 개선이
+          이루어집니다.
+        </p>
+
+        <ul>
+          <li>
+            평가 계획 수립: 학년 초기 국가수준교육과정(KNC) 성취 기준, PYP
+            과목별 범주 및 계열, Cambridge 국제교육과정(CIE) 성취기준을 기반으로
+            IB PYP 평가 철학을 반영하여 학생과 교사가 함께 평가 계획을
+            수립합니다. 학습 내용 및 탐구활동에 따른 평가 목표, 평가 방법, 평가
+            시기 등을 계획하고 학습의 과정이 평가와 연계되도록 학생과 교사가
+            함께 만들어 가는 평가를 지향합니다.
+          </li>
+          <li>
+            평가 실시 : 다양한 형태(사전평가, 형성평가, 총괄평가)로 학습 과정 중
+            평가가 실시됩니다. 평가 결과는교수·학습 과정에서 학생의 변화와
+            성장에 대한 자료로 활용합니다.
+          </li>
+          <li>
+            결과 피드백 및 통지(가정 공유): 교사는 학생들에게 평가 결과에 대한
+            피드백 및 통지를 통해 학생들의 탐구에 대한 성취 경험을 제공합니다.
+            이를 통해 학생들은 성장의 기회를 가지고, 학습 결과에 대한 성찰과
+            개선, 보완의 기회를 제공받습니다. NSES는 학부모들에게 연간 6회의 UOI
+            단원 평가 및 성찰 결과를 통지하며, 년1회 학년말에 생활 통지표를
+            제공합니다. 학부모는 다양한 평가 결과 통지를 공유하며 자녀에 대한
+            이해도를 높이며, 자기주도적 학습 능력 향상을 위해 가정에서 다양하게
+            지원할 수 있습니다.
+          </li>
+        </ul>
+
+        <br />
+        <br />
+        <div class="section-title">
+          <div class="indicator">&nbsp;</div>
+
+          <p>평가 내용 (What to assess)</p>
+        </div>
+
+        <p class="section-content">
+          NSES는 학생의 모든 학습 과정 중에 학생들의 지식, 개념적 이해, 기능을
+          개발하는 다양한 학습 기회를 제 공하여 평가합니다. 학습 목표는
+          국가수준교육과정(KNC), PYP의 과목별 범주와 계열, 캠브리지 영어 성취
+          기준을 기반으로 정해집니다. 학습자상에 대한 평가는 하지 않으며 학습의
+          과정속에 학습자상을 바탕으로 한 피드백을 제공하고 있습니다. 학교는
+          학생들이 능동적으로 자신의 학습자상에 대한 성찰을 꾸준히 진행할 수
+          있도록 지원합니다.
+        </p>
+
+        <br />
+        <br />
+        <div class="section-title">
+          <div class="indicator">&nbsp;</div>
+
+          <p>평가 방법 (How to assess)</p>
+        </div>
+
+        <p class="section-content">
+          학생들의 다양한 학습 정보와 학습 향상을 위한 피드백 자료를 제공하기
+          위해 다양한 평가의 도구와 전략 을 사용합니다.
+        </p>
+
+        <ul>
+          <li>
+            학습 관찰(Monitoring Learning)교사는 학습에 대한 학생의 학업성취도를
+            파악하기 위해 루브릭, 체크리스트, 누가 기록, 서술 등 다양한 도구를
+            사용하여 탐구의 모든 과정을 종합적으로 관찰하고 그 결과를 피드백으로
+            제공합니다. 학생들에게 다양한 학습 정보와 학습 향상을 위한 피드백
+            자료를 제공합니다.
+          </li>
+
+          <li>
+            학습 기록(Documenting Learning)학습장 및 포트폴리오: 탐구활동을 통한
+            다양한 산출물을 공유하고 다양한 형태의 피드백을 제공하며 이를
+            포트폴리오로 제작하여 관리합니다. 온라인 플랫폼: 학습의 증거는
+            온ᆞ오프라인 매체를 활용하여 수집하고 교사, 학생, 학부모가 수시로
+            접근할 수 있도록 합니다.
+          </li>
+
+          <li>
+            학습 측정(Measuring Learning)탐구과정 내용과 관련하여 학습을 위한
+            사전 진단평가, 형성평가, 총괄평가 등으로 데이터를 수집하고 분석하여
+            학습의 질과 성공의 여부를 판단합니다. 이 때, 관찰, 포트폴리오, 서술
+            및 논술형 평가, 자기 및 상호평가 등 탐구의 목적에 적합한 다양한
+            전략을 활용하여 평가합니다.
+            <br />
+            - 진단평가: 기존에 학습한 내용에 대한 학생의 인지 정도와 현재 수준을
+            파악하여 교수학습지도 내 용에 대한 재구성, 학습 방법 개선을 위한
+            기초 자료로 활용합니다. 이때 지역교육청 개발 문항을 활용하여
+            측정합니다.<br />
+            - 형성평가: 탐구활동 이나 단일 교과의 학습 과정 중에 학생들이
+            도달해야 할 성취수준을 확인하기 위해 실시합니다. 교사는 형성평가를
+            통해 학생들에게 즉각적인 피드백을 제공하며 학생 성장을
+            지원합니다.<br />
+            - 총괄평가: 프로그램의 마지막 단계에 학습의 향상을 증명하고 보고하기
+            위해 실시합니다.
+          </li>
+        </ul>
+
+        <p class="section-content">
+          학습 결과 보고를 통해 학생들의 학업 성취 향상과 성장 정도에 대한
+          정보를 제공하며 NSES는 다음과 같이 학습 결과를 보고합니다.
+        </p>
+
+        <ul>
+          <li>
+            보고서: NSES 단원평가 및 성찰 연간 6회 통지, 생활통지표(연간 1회)
+          </li>
+          <li>
+            학부모/교사/학생 컨퍼런스: 학부모 상담주간 및 수시 면담을 통한 공유
+          </li>
+          <li>
+            피드백 교환(Giving and receiving feedback) Ÿ 교사는 학생의 탐구에
+            대한 반성과 행동 변화의 기회를 제공하고, 성공 경험을 늘려 성장을
+            지원할 수 있도록 지식, 개념적 이해, 학습 과정에 대한 피드백을
+            합니다. 또한 학생간 동료 피드백은 상호 의사소통함으로써 인간 관계
+            맥락에서 학습 기회를 제공하고, 학생들의 평가능력을 향상시킵니다.
+            학부모는 학습 결과 보고를 바탕으로 자녀를 더 잘 이해하며 가정에서
+            학생들의 자기주도적 학습을 지지하고 도와주는데 영향을 미칩니다.
+          </li>
+        </ul>
+
+        <br />
+        <br />
+        <div class="section-title">
+          <div class="indicator">&nbsp;</div>
+
+          <p>검토 (Review)</p>
+        </div>
+
+        <p class="section-content">
+          평가정책은 1년에 한 번 검토합니다. 이 검토는 학교 관리자, IB PYP
+          프로그램 담당자, 교무부장, 교육과정부장이 주도합니다. 정책에 대한
+          교사, 학부모 및 학생의 의견도 고려하며 충분히 검토한 정책은
+          학교운영위원회가 승인합니다.
+        </p>
+        <br />
+        <br />
+        <div class="section-title">
+          <div class="indicator">&nbsp;</div>
+
+          <p>참고 문헌 (References)</p>
+        </div>
+
+        <p class="section-content">
+          <br />2023 남성초등학교 학교 규칙 <br />Assessment principles and
+          practices assessments in a digital age (International Baccalaureate,
+          2017) <br />From principle to practice, learning, and teaching
+          (International Baccalaureate, 2018)
+        </p>
+      </div>
+      <div class="xe-btn-wrapper" style="margin-top: 30px">
+        <a
+          class="btn-xe-grid-container"
+          href="/plugins/custom_plugin/simple_page/assets/img/policy/NSES_Assessment_Policy.pdf"
+          target="_blank"
+          ><span>English Version</span>
+          <svg
+            fill="none"
+            height="20"
+            viewbox="0 0 20 20"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.8537 6.64101L12.4375 3.00091L11.67 3.88837C11.3991 4.10898 11.1859 4.30954 11.0304 4.49004C10.8749 4.67054 10.7971 4.76079 10.7971 4.76079C10.7971 4.76079 11.053 5.02653 11.5646 5.55801C12.0763 6.08948 12.6632 6.74129 13.3254 7.51344L15.9591 10.2661L13.4308 13.0187C12.7184 13.7909 12.1014 14.4427 11.5797 14.9742C11.058 15.5056 10.7971 15.7714 10.7971 15.7714C10.7971 15.7714 10.8699 15.8616 11.0153 16.0421C11.1608 16.2226 11.3439 16.4232 11.5646 16.6438L12.3322 17.5312L15.7484 13.8911C16.24 13.3998 16.7015 12.9335 17.1329 12.4923C17.5643 12.051 17.938 11.665 18.2541 11.334C18.5701 11.0031 18.8184 10.7424 18.999 10.5519C19.1796 10.3613 19.2699 10.2661 19.2699 10.2661C19.2699 10.2661 19.1796 10.1708 18.999 9.98029C18.8184 9.78976 18.5726 9.52903 18.2616 9.19811C17.9506 8.8672 17.5894 8.48112 17.1781 8.0399C16.7667 7.59867 16.3253 7.13238 15.8537 6.64101ZM1 10.9279V8.9424H14.7551L15.9591 10.2661L15.2969 10.9279H1Z"
+              fill="white"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <!-- 아코디언 3 -->
+
+    <div class="accordion">
+      <svg
+        class="xe-plus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z"
+          fill="#005EC4"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="xe-minus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z"
+          fill="#005EC4"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+
+      <p>학교 생활 규정</p>
+    </div>
+
+    <div class="accordion-content">
+      <div class="section">
+        <div class="section-title">
+          <div class="indicator">&nbsp;</div>
+
+          <p>학교 생활 규정</p>
+        </div>
+
+        <p class="section-content">
+          생활규정은 학생들이 학교생활을 원활히 영위하고, 올바른 인성을 함양하며
+          자율적 학습 태도를 기르기 위해 제정되었습니다. 이 규정은 모든
+          남성초등학교 학생들에게 적용되며, 학생들은 학교생활 전반에 걸쳐 이를
+          준수해야 합니다.
+        </p>
+      </div>
+      <div class="xe-btn-wrapper" style="margin-top: 30px">
+        <a
+          class="btn-xe-grid-container"
+          href="/plugins/custom_plugin/simple_page/assets/img/policy/2024_학생생활규정_시행령_최종.pdf"
+          target="_blank"
+          ><span>학교 생활 규정 자세히 보기</span>
+          <svg
+            fill="none"
+            height="20"
+            viewbox="0 0 20 20"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.8537 6.64101L12.4375 3.00091L11.67 3.88837C11.3991 4.10898 11.1859 4.30954 11.0304 4.49004C10.8749 4.67054 10.7971 4.76079 10.7971 4.76079C10.7971 4.76079 11.053 5.02653 11.5646 5.55801C12.0763 6.08948 12.6632 6.74129 13.3254 7.51344L15.9591 10.2661L13.4308 13.0187C12.7184 13.7909 12.1014 14.4427 11.5797 14.9742C11.058 15.5056 10.7971 15.7714 10.7971 15.7714C10.7971 15.7714 10.8699 15.8616 11.0153 16.0421C11.1608 16.2226 11.3439 16.4232 11.5646 16.6438L12.3322 17.5312L15.7484 13.8911C16.24 13.3998 16.7015 12.9335 17.1329 12.4923C17.5643 12.051 17.938 11.665 18.2541 11.334C18.5701 11.0031 18.8184 10.7424 18.999 10.5519C19.1796 10.3613 19.2699 10.2661 19.2699 10.2661C19.2699 10.2661 19.1796 10.1708 18.999 9.98029C18.8184 9.78976 18.5726 9.52903 18.2616 9.19811C17.9506 8.8672 17.5894 8.48112 17.1781 8.0399C16.7667 7.59867 16.3253 7.13238 15.8537 6.64101ZM1 10.9279V8.9424H14.7551L15.9591 10.2661L15.2969 10.9279H1Z"
+              fill="white"
+            ></path>
+          </svg>
+        </a>
+        <a
+          class="btn-xe-grid-container"
+          href="https://form.naver.com/response/fJRva3zyF1yIvQe3Ga_juA"
+          target="_blank"
+          ><span>학부모 면담 신청</span>
+          <svg
+            fill="none"
+            height="20"
+            viewbox="0 0 20 20"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.8537 6.64101L12.4375 3.00091L11.67 3.88837C11.3991 4.10898 11.1859 4.30954 11.0304 4.49004C10.8749 4.67054 10.7971 4.76079 10.7971 4.76079C10.7971 4.76079 11.053 5.02653 11.5646 5.55801C12.0763 6.08948 12.6632 6.74129 13.3254 7.51344L15.9591 10.2661L13.4308 13.0187C12.7184 13.7909 12.1014 14.4427 11.5797 14.9742C11.058 15.5056 10.7971 15.7714 10.7971 15.7714C10.7971 15.7714 10.8699 15.8616 11.0153 16.0421C11.1608 16.2226 11.3439 16.4232 11.5646 16.6438L12.3322 17.5312L15.7484 13.8911C16.24 13.3998 16.7015 12.9335 17.1329 12.4923C17.5643 12.051 17.938 11.665 18.2541 11.334C18.5701 11.0031 18.8184 10.7424 18.999 10.5519C19.1796 10.3613 19.2699 10.2661 19.2699 10.2661C19.2699 10.2661 19.1796 10.1708 18.999 9.98029C18.8184 9.78976 18.5726 9.52903 18.2616 9.19811C17.9506 8.8672 17.5894 8.48112 17.1781 8.0399C16.7667 7.59867 16.3253 7.13238 15.8537 6.64101ZM1 10.9279V8.9424H14.7551L15.9591 10.2661L15.2969 10.9279H1Z"
+              fill="white"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        // 아코디언 클릭 이벤트 처리
+        $(".accordion").click(function () {
+          // 클릭된 아코디언이 열려있다면 닫기
+          if ($(this).hasClass("active")) {
+            $(this).removeClass("active");
+            $(this).next(".accordion-content").slideUp(200);
+          } else {
+            // 다른 모든 아코디언을 닫기
+            $(".accordion").removeClass("active");
+            $(".accordion-content").slideUp(200);
+
+            // 클릭된 아코디언을 열기
+            $(this).addClass("active");
+            $(this).next(".accordion-content").slideDown(200);
+          }
+        });
+
+        // 페이지 로드 시 첫 번째 아코디언 항목을 기본으로 열어두기
+        $(".accordion").first().addClass("active");
+        $(".accordion").first().next(".accordion-content").show();
+      });
+    </script>
+  </body>
+</html>

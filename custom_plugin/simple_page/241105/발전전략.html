@@ -1,0 +1,1264 @@
+<div class="container">
+  <style type="text/css">
+    .xe-strategy-sub-banner {
+      display: flex !important;
+    }
+    .xe-lnb-area-hidden {
+      display: none !important;
+    }
+    .container p {
+      margin: 0 !important;
+    }
+    .sub-menu-title {
+      display: flex !important;
+    }
+    .xe-sub-banner-wrap {
+      display: none !important;
+    }
+
+    .xe-lnb-area-hidden {
+      display: none;
+    }
+
+    .container {
+      font-family: "Noto Sans KR", sans-serif;
+      color: #001226;
+    }
+
+    .main-title {
+      font-size: 24px !important;
+      font-weight: bold;
+      color: #00509e !important;
+      margin-bottom: 10px !important;
+    }
+
+    .description {
+      font-size: 16px !important;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 20px !important;
+    }
+
+    .highlight-box {
+      background-color: #fff;
+      padding: 0 20px !important;
+      border-left: 4px solid #f1c400;
+      margin-bottom: 20px !important;
+      color: var(--1, #001226) !important;
+      font-family: "Noto Sans KR";
+      font-size: 16px !important;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 25px !important; /* 156.25% */
+      letter-spacing: -0.48px !important;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px !important;
+      margin-bottom: 50px !important;
+    }
+
+    .grid-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    .accordion {
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 18px !important;
+      color: #001226 !important;
+      padding: 0;
+      cursor: pointer;
+      border-bottom: 1px solid #ffffff62;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: transparent;
+      position: relative;
+      transition: background-color 0.3s, border-left 0.3s;
+    }
+
+    .accordion-wrapper .accordion:first-child {
+      border-top: 1px solid #ffffff62;
+    }
+
+    .accordion.active {
+      border-top: 1px solid #ffffff62;
+      border-left: 6px solid #005ec4;
+      color: #f3c900 !important;
+    }
+    .accordion:hover {
+      background-color: transparent;
+      border-left: 4px solid #f3c900;
+      color: #f3c900 !important;
+    }
+    .accordion.active p {
+      font-size: 14px !important;
+      font-style: normal !important;
+      font-weight: 700 !important;
+      line-height: 18px !important; /* 128.571% */
+      color: #fff !important;
+    }
+    .accordion p {
+      font-size: 14px !important;
+      font-style: normal !important;
+      font-weight: 700 !important;
+      line-height: 18px !important; /* 128.571% */
+      color: #fff !important;
+    }
+
+    .xe-plus-icon {
+      width: 50px !important;
+    }
+
+    .xe-minus-icon {
+      display: none;
+      width: 50px !important;
+    }
+
+    .accordion.active .xe-plus-icon {
+      display: none !important;
+    }
+
+    .accordion.active .xe-minus-icon {
+      display: flex !important;
+    }
+
+    .accordion-content {
+      display: none;
+      background-color: #ffffff19;
+      padding: 30px 20px !important;
+      color: #fff !important;
+      font-family: "Noto Sans KR" !important;
+      font-size: 16px !important;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 25px !important; /* 156.25% */
+      letter-spacing: -0.64px !important;
+    }
+
+    .accordion.active + .accordion-content {
+      display: block;
+    }
+
+    .accordion-content ul {
+      list-style: disc;
+      padding-left: 20px !important;
+      list-style-type: disc !important;
+      margin-block-start: 1em !important;
+      margin-block-end: 1em !important;
+      margin-inline-start: 0px !important;
+      margin-inline-end: 0px !important;
+      padding-inline-start: 40px !important;
+      unicode-bidi: isolate !important;
+    }
+
+    .accordion-content ul li {
+      margin-bottom: 10px !important;
+    }
+
+    .accordion-content a {
+      color: #00509e !important;
+      text-decoration: none;
+    }
+
+    .accordion-content a:hover {
+      text-decoration: underline;
+    }
+
+    /* 미디어 쿼리 */
+    @media (max-width: 768px) {
+      .main-title {
+        font-size: 24px !important;
+      }
+
+      .description {
+        font-size: 16px !important;
+      }
+
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+
+      .accordion {
+        font-size: 20px !important;
+      }
+      .accordion p {
+        font-size: 15px !important;
+      }
+      .accordion.active p {
+        font-size: 15px !important;
+      }
+
+      .accordion-content {
+        font-size: 18px !important;
+        padding: 40px 30px !important;
+      }
+      .highlight-box {
+        background-color: #fff;
+        padding: 0 20px !important;
+        border-left: 4px solid #f1c400;
+        margin-bottom: 28px !important;
+        color: var(--1, #001226);
+        font-family: "Noto Sans KR";
+        font-size: 18px !important;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 27px !important; /* 150% */
+        letter-spacing: -0.54px !important;
+      }
+    }
+
+    .chairman-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px !important;
+      margin-bottom: 50px !important;
+    }
+
+    .chairman-container img {
+      width: 100% !important;
+      height: auto;
+    }
+    .chairman-container > .chairman-items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px !important;
+      text-decoration: none !important;
+    }
+    .chairman-container-title {
+      color: var(--1, #001226);
+      font-family: "Noto Sans KR";
+      font-size: 22px !important;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 31px !important; /* 140.909% */
+      letter-spacing: -0.22px !important;
+    }
+    .chairman-container-desc {
+      color: var(--1, #001226);
+      font-family: "Noto Sans KR";
+      font-size: 16px !important;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 25px !important; /* 156.25% */
+      letter-spacing: -0.32px !important;
+    }
+    .btn-xe-chairman-container:hover {
+      opacity: 0.8;
+    }
+    .btn-xe-chairman-container {
+      background-color: #005ec4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px 20px !important;
+      gap: 10px !important;
+      width: 100%;
+      max-width: 280px !important;
+      text-decoration: none !important;
+    }
+    .btn-xe-chairman-container svg {
+      width: 18px !important;
+    }
+    .btn-xe-chairman-container span {
+      color: var(--9, #fff) !important;
+      text-align: center;
+      font-family: "Noto Sans KR";
+      font-size: 13px !important;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 18px !important; /* 138.462% */
+      letter-spacing: -0.26px !important;
+    }
+    .chairman-items {
+      background: #f9fcff;
+      box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
+      padding: 30px 20px;
+    }
+
+    @media (min-width: 1140px) {
+      .chairman-items {
+        background-color: #f9fcff;
+        padding: 40px 30px;
+      }
+      .chairman-container > .chairman-items {
+        display: flex;
+        flex-direction: column;
+        gap: 30px !important;
+      }
+      .chairman-container-title {
+        color: var(--1, #001226) !important;
+        font-family: "Noto Sans KR";
+        font-size: 27px !important;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 36px !important; /* 133.333% */
+      }
+      .chairman-container-desc {
+        color: var(--1, #001226);
+        font-family: "Noto Sans KR";
+        font-size: 18px !important;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 27px !important; /* 150% */
+        letter-spacing: -0.36px !important;
+      }
+      .btn-xe-chairman-container {
+        background-color: #005ec4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px 20px !important;
+        gap: 10px !important;
+      }
+      .chairman-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .chairman-container img {
+        width: 100% !important;
+        height: auto;
+      }
+    }
+  </style>
+  <div class="chairman-container">
+    <div class="chairman-items">
+      <p class="chairman-container-title">비전 메시지</p>
+
+      <p class="chairman-container-desc">
+        남성초등학교 가족 여러분,<br />
+        남성초등학교는 1962년 개교 이래 여러 시대를 거쳐 발전해 왔습니다.
+        1980년대에는 자발성과 자율성을 꽃피운 ‘자율협력 학습’의 시대를,
+        1990년대에는 개별화, 개성화를 존중한 열린 교육의 시대를, 2000년대에는
+        전국 1위 영어리더학교의 시대를, 그리고 2020년대에는 글로벌 경쟁력 확보를
+        위한 국제교육 도입의 시대를 만들어 가고 있습니다. 특히 2021년에는
+        캠브리지 인증 국제학교로 시작하여, 2023년에는 IB 후보학교로
+        선정되었습니다.
+      </p>
+
+      <p class="chairman-container-desc">
+        현재 남성초등학교는 "Above &amp; Beyond"의 정신을 바탕으로 민주 사회의
+        바른 시민을 기르고, 세상을 변화시키는 글로벌 리더를 양성한다는 사명과
+        자부심을 가지고 있습니다. 우리의 이상적인 목표와 이를 위한 바른 행동은
+        세상을 이롭게 만드는 데 기여할 것입니다. 그래서 남성초등학교는 멈추지
+        않고 앞으로 나아갈 것입니다.
+      </p>
+
+      <p class="chairman-container-desc">
+        2024 전략<br />
+        IB 월드스쿨 인증: IB 교육방식의 주요 교과 수업을 전국 최초로 한국어와
+        영어, 두 개 언어로 운영할 예정입니다.&nbsp;
+      </p>
+
+      <p class="chairman-container-desc">
+        2025 전략<br />
+        WASC 인증 추진: 미국 최대 교육기구인 WASC 인증을 추진하여 글로벌
+        경쟁력을 갖춘 명문학교로 발전하겠습니다.
+      </p>
+
+      <p class="chairman-container-desc">
+        2030 전략<br />
+        K-international Education 실현: 한국교육의 강점인 교사와 학생 간의 신뢰
+        및 유대감을 바탕으로 한 세심한 케어와 목표지향적 집중 학습역량, 인성교육
+        중시와 함께 국제교육을 융합시킨 K-international education을
+        실현시키겠습니다.
+      </p>
+
+      <p class="chairman-container-desc">
+        국제교류 활성화: 세계 국제학교와의 국제교류를 활성화하여 학생들이
+        전세계를 무대로 배움의 기회를 더욱 풍부하게 가질 수 있도록 헌신할
+        것입니다.
+      </p>
+
+      <p class="chairman-container-desc">
+        남성 패밀리 커뮤니티 형성: 학생, 학부모, 교직원, 동문 모두를 위한 남성
+        패밀리 커뮤니티를 형성하여 행복한 삶을 지원하는 환경을 구축할 것입니다.
+      </p>
+
+      <p class="chairman-container-desc">
+        변화와 혁신은 언제나 쉽지 않습니다. 그럼에도 불구하고, 쉬운 일을
+        선택하기보다 해야 하는 일을 선택하고 실천하는 남성초등학교가 되기 위해
+        노력할 것입니다. 감사합니다.
+      </p>
+
+      <p class="chairman-container-desc">학교법인 남성학원 이사장</p>
+    </div>
+  </div>
+  <style type="text/css">
+    .accordion-wrapper {
+      padding: 30px 20px;
+      box-sizing: border-box;
+      margin-bottom: 40px;
+    }
+    .accordion-top-contents {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .top-title {
+      color: var(--9, #fff) !important;
+      font-family: "Noto Sans KR" !important;
+      font-size: 43px !important;
+      font-style: normal !important;
+      font-weight: 700 !important;
+      line-height: 50px !important; /* 116.279% */
+      text-transform: uppercase !important;
+      word-break: keep-all !important;
+    }
+    .top-sub-title {
+      color: #4f94cf !important;
+      font-family: "Noto Sans KR" !important;
+      font-size: 27px !important;
+      font-style: normal !important;
+      font-weight: 700 !important;
+      line-height: 35px !important; /* 129.63% */
+      letter-spacing: -0.54px !important;
+      word-break: keep-all !important;
+    }
+    .top-desc {
+      background: linear-gradient(90deg, #f3c900 0%, #f1c400 100%) !important;
+      background-clip: text !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      font-family: "Noto Sans KR" !important;
+      font-size: 20px !important;
+      font-style: normal !important;
+      font-weight: 400 !important;
+      line-height: 30px !important; /* 150% */
+      padding-bottom: 40px !important;
+      word-break: keep-all !important;
+    }
+    .accordion-title-text {
+      background: linear-gradient(90deg, #f3c900 0%, #f1c400 100%) !important;
+      background-clip: text !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      font-family: "Noto Sans KR" !important;
+      font-size: 20px !important;
+      font-style: normal !important;
+      font-weight: 700 !important;
+      line-height: 30px !important; /* 150% */
+      padding-bottom: 20px !important;
+    }
+    .top-bg-img {
+      width: 100%;
+      aspect-ratio: 33/22;
+      background-size: cover;
+      background-position: center;
+    }
+    .ccordion-top-contents-text-wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: start;
+      gap: 20px;
+    }
+    @media screen and (min-width: 1140px) {
+      .accordion-wrapper {
+        padding: 40px 30px;
+        box-sizing: border-box;
+        margin-bottom: 80px;
+      }
+      .ccordion-top-contents-text-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        gap: 30px;
+      }
+      .accordion-top-contents {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .top-title {
+        color: var(--9, #fff) !important;
+        font-family: "Noto Sans KR" !important;
+        font-size: 57px !important;
+        font-style: normal !important;
+        font-weight: 700 !important;
+        line-height: 69px !important; /* 121.053% */
+        letter-spacing: -1.71px !important;
+      }
+      .top-sub-title {
+        color: #4f94cf !important;
+        font-family: "Noto Sans KR" !important;
+        font-size: 32px !important;
+        font-style: normal !important;
+        font-weight: 700 !important;
+        line-height: 40px !important; /* 125% */
+        letter-spacing: -0.64px !important;
+      }
+      .top-desc {
+        background: linear-gradient(90deg, #f3c900 0%, #f1c400 100%) !important;
+        background-clip: text !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        font-family: "Noto Sans KR" !important;
+        font-size: 22px !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        line-height: 32px !important; /* 145.455% */
+        padding-bottom: 80px !important;
+      }
+      .top-bg-img {
+        width: 100%;
+        aspect-ratio: 33/22;
+        max-width: 330px;
+      }
+    }
+  </style>
+  <div
+    class="accordion-wrapper"
+    style="
+      width: 100%;
+      height: auto;
+      background: radial-gradient(
+        66.41% 50.42% at 23.04% 45.3%,
+        #005ec4 6%,
+        #032d64 75.45%,
+        #00244e 100%
+      );
+    "
+  >
+    <!-- 아코디언 섹션 -->
+    <div class="accordion-top-contents">
+      <div class="ccordion-top-contents-text-wrapper">
+        <div class="accordion-top-contents">
+          <p class="top-title">교육과정의 역량강화</p>
+
+          <p class="top-sub-title">우리의 핵심</p>
+
+          <p class="top-desc">
+            남성초등학교는 1980년대부터 교육을 선도해 온 역량을 바탕으로, 우수한
+            교수진의 교수법과 교육 커리큘럼 제공을 약속합니다.
+          </p>
+        </div>
+
+        <div
+          class="top-bg-img"
+          style="
+            background-image: url('/plugins/custom_plugin/simple_page/assets/img/greeting/s2.png');
+          "
+        >
+          &nbsp;
+        </div>
+      </div>
+
+      <div>
+        <p class="accordion-title-text">구현방안</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <svg
+        class="xe-plus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="xe-minus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+
+      <p>교사 역량 강화 연수</p>
+    </div>
+
+    <div class="accordion-content">
+      지속적인 교사 역량 강화 연수를 통해 교수진과 교직원의 우수성을 촉진합니다.
+    </div>
+
+    <div class="accordion">
+      <svg
+        class="xe-plus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="xe-minus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+
+      <p>협업 및 학제 간 커리큘럼</p>
+    </div>
+
+    <div class="accordion-content">
+      협업 및 학제 간 방법을 강조하는 커리큘럼을 구축합니다.
+    </div>
+
+    <div class="accordion">
+      <svg
+        class="xe-plus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="xe-minus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+
+      <p>운동, 예술, 학습형 늘봄 생활</p>
+    </div>
+
+    <div class="accordion-content">
+      운동, 예술, 학습형 늘봄 생활 및 모든 커뮤니티 활동에서 학습 기회를
+      극대화합니다.
+    </div>
+
+    <div class="accordion">
+      <svg
+        class="xe-plus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="xe-minus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+
+      <p>탐구적이고 존중하는 담론</p>
+    </div>
+
+    <div class="accordion-content">
+      우리 주변의 다양한 경험을 통해 더욱 풍성해진 탐구적이고 존중하는 담론을
+      장려합니다. 남성초등학교는 학생들이 다양한 분야에서 최고의 능력을 발휘할
+      수 있도록 최선을 다해 지원합니다.
+    </div>
+  </div>
+
+  <div
+    class="accordion-wrapper"
+    style="
+      width: 100%;
+      height: auto;
+      background: radial-gradient(
+        66.41% 50.42% at 23.04% 45.3%,
+        #005ec4 6%,
+        #032d64 75.45%,
+        #00244e 100%
+      );
+    "
+  >
+    <!-- 아코디언 섹션 -->
+    <div class="accordion-top-contents">
+      <div class="ccordion-top-contents-text-wrapper">
+        <div class="accordion-top-contents">
+          <p class="top-title">미래로 도약</p>
+
+          <p class="top-sub-title">교육철학과 운영방식의 발전</p>
+
+          <p class="top-desc">
+            남성초등학교는 시대가 요구하는 창의력과 비판적 사고력을 갖춘
+            창의융합형 미래 인재 양성을 위해 세계적으로 인정받은 IB PYP를
+            운영합니다.
+          </p>
+        </div>
+
+        <div
+          class="top-bg-img"
+          style="
+            background-image: url('/plugins/custom_plugin/simple_page/assets/img/greeting/s3.png');
+          "
+        >
+          &nbsp;
+        </div>
+      </div>
+
+      <div>
+        <p class="accordion-title-text">구현방안</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <svg
+        class="xe-plus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="xe-minus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+
+      <p>IB PYP 월드스쿨 인증</p>
+    </div>
+
+    <div class="accordion-content">
+      2024학년도에 IB PYP 월드스쿨 후보학교 운영 → 2024학년도 인증 예정<br />
+      <br />
+      2025학년도부터 본격적으로 IB PYP를 운영하여 학생들에게 세계적 수준의
+      교육을 제공합니다.
+    </div>
+
+    <div class="accordion">
+      <svg
+        class="xe-plus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="xe-minus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+
+      <p>IB 교육 전문가 양성을 위한 교사 연수</p>
+    </div>
+
+    <div class="accordion-content">
+      IB PYP 프로그램의 효과적인 운영을 위해 교사들에게 전문적인 연수를
+      제공합니다.<br />
+      <br />
+      정기적인 연수를 통해 교사들이 최신 교육방법과 IB 교육 철학을 습득할 수
+      있도록 지원합니다.
+    </div>
+
+    <div class="accordion">
+      <svg
+        class="xe-plus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="xe-minus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+
+      <p>남성 교육공동체 대상 연수 및 상시 교육</p>
+    </div>
+
+    <div class="accordion-content">
+      IB 교육 활성화를 위해 교사뿐만 아니라 학부모와 지역 사회를 포함한 남성
+      교육공동체 모두를 대상으로 하는 연수를 실시합니다.<br />
+      <br />
+      상시 연수를 통해 교육공동체가 IB 교육 철학과 방법론을 이해하고 지원할 수
+      있도록 합니다.
+    </div>
+  </div>
+
+  <div
+    class="accordion-wrapper"
+    style="
+      width: 100%;
+      height: auto;
+      background: radial-gradient(
+        66.41% 50.42% at 23.04% 45.3%,
+        #005ec4 6%,
+        #032d64 75.45%,
+        #00244e 100%
+      );
+    "
+  >
+    <!-- 아코디언 섹션 -->
+    <div class="accordion-top-contents">
+      <div class="ccordion-top-contents-text-wrapper">
+        <div class="accordion-top-contents">
+          <p class="top-title">세계로의 진출</p>
+
+          <p class="top-sub-title">글로벌 커뮤니티 형성</p>
+
+          <p class="top-desc">
+            남성초등학교는 국제학교와의 교류를 통해 글로벌 리더로 성장할 수 있는
+            커뮤니티를 형성하고, 다양한 국제 경험을 지원합니다.
+          </p>
+        </div>
+
+        <div
+          class="top-bg-img"
+          style="
+            background-image: url('/plugins/custom_plugin/simple_page/assets/img/greeting/s4.png');
+          "
+        >
+          &nbsp;
+        </div>
+      </div>
+
+      <div>
+        <p class="accordion-title-text">구현방안</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <svg
+        class="xe-plus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="xe-minus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+
+      <p>국제 자매결연</p>
+    </div>
+
+    <div class="accordion-content">
+      아시아, 미국, 유럽 등 다양한 지역의 국제학교와 자매결연을 추진합니다.<br />
+      <br />
+      정기적인 교류 프로그램을 통해 학생들이 글로벌 시각을 넓힐 수 있는 기회를
+      제공합니다.
+    </div>
+
+    <div class="accordion">
+      <svg
+        class="xe-plus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="xe-minus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+
+      <p>국제 프로그램 활성화</p>
+    </div>
+
+    <div class="accordion-content">
+      <span
+        style="
+          background: linear-gradient(90deg, #f3c900 0%, #f1c400 10.79%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        "
+        >교환학생 프로그램</span
+      ><br />
+      학생들이 해외 학교에서 학습하고 생활하는 기회를 제공하여 문화적 다양성을
+      경험할 수 있게 합니다.<br />
+      <br />
+      <span
+        style="
+          background: linear-gradient(90deg, #f3c900 0%, #f1c400 10.79%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        "
+        >해외캠프</span
+      ><br />
+      여름/겨울 방학 동안 해외캠프를 운영하여 학생들이 다양한 나라의 문화를
+      체험하고 글로벌 마인드를 키울 수 있게 합니다.
+    </div>
+
+    <div class="accordion">
+      <svg
+        class="xe-plus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M26.5 22V21H24.5V22V26.5H20H19V28.5H20H24.5V33V34H26.5V33V28.5H31H32V26.5H31H26.5V22Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+      <svg
+        class="xe-minus-icon"
+        fill="none"
+        viewbox="0 0 50 55"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M19 26.5H20H31H32V28.5H31H20H19V26.5Z"
+          fill="#fff"
+          fill-rule="evenodd"
+        ></path>
+      </svg>
+
+      <p>국제 행사 개최</p>
+    </div>
+
+    <div class="accordion-content">
+      <span
+        style="
+          background: linear-gradient(90deg, #f3c900 0%, #f1c400 10.79%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        "
+        >학술 세미나</span
+      ><br />
+      국제학교 간의 학술 세미나를 개최하여 다양한 학문적 교류와 협력을
+      증진합니다.<br />
+      <br />
+      <span
+        style="
+          background: linear-gradient(90deg, #f3c900 0%, #f1c400 10.79%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        "
+        >박람회</span
+      ><br />
+      글로벌 박람회를 통해 학생들이 다양한 국가의 문화를 직접 경험할 수 있는
+      기회를 제공합니다.<br />
+      <br />
+      <span
+        style="
+          background: linear-gradient(90deg, #f3c900 0%, #f1c400 10.79%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        "
+        >영어 스피치 대회</span
+      ><br />
+      영어 스피치 대회를 개최하여 학생들의 영어 실력과 발표 능력을
+      향상시킵니다.<br />
+      <br />
+      학생들이 다양한 국제 경험을 통해 미래의 글로벌 리더로서의 역량을 키울 수
+      있도록 지속적으로 지원할 것입니다.
+    </div>
+  </div>
+  <style type="text/css">
+    .xe-img-wrapper-pc-sm .xe-img-sm {
+      display: block;
+      width: 100%;
+      pointer-events: none;
+    }
+    .xe-img-wrapper-pc-sm .xe-img-pc {
+      display: none;
+      width: 100%;
+      pointer-events: none;
+    }
+    @media screen and (min-width: 1140px) {
+      .xe-img-wrapper-pc-sm .xe-img-pc {
+        display: block !important;
+      }
+      .xe-img-wrapper-pc-sm .xe-img-sm {
+        display: none !important;
+      }
+    }
+  </style>
+  <div class="xe-img-wrapper-pc-sm">
+    <img
+      alt="남성초등학교 이미지"
+      class="xe-img-pc"
+      src="/plugins/custom_plugin/simple_page/241105/assets/strategy-new-2.png"
+    />
+    <img
+      alt="남성초등학교 이미지"
+      class="xe-img-sm"
+      src="/plugins/custom_plugin/simple_page/241105/assets/strategy-new-2-m.png"
+    />
+  </div>
+</div>
+
+<p
+  style="
+    color: #001226 !important;
+    font-size: 22px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 31px !important; /* 140.909% */
+    letter-spacing: -0.88px;
+    padding-top: 80px !important;
+  "
+>
+  협력기관
+</p>
+
+<div
+  class="swiper mySwiper22222"
+  style="width: 100% !important; margin: 0 0 60px 0"
+>
+  <div class="swiper-wrapper" style="align-items: center !important">
+    <div
+      class="swiper-slide"
+      style="display: flex; align-items: center; justify-content: center"
+    >
+      <img
+        alt="남성초 이미지"
+        src="/plugins/custom_plugin/simple_page/assets/img/str_swiper/1.png"
+        style="height: 100%"
+      />
+    </div>
+
+    <div
+      class="swiper-slide"
+      style="display: flex; align-items: center; justify-content: center"
+    >
+      <img
+        alt="남성초 이미지"
+        src="/plugins/custom_plugin/simple_page/assets/img/str_swiper/2.png"
+        style="height: 100%"
+      />
+    </div>
+
+    <div
+      class="swiper-slide"
+      style="display: flex; align-items: center; justify-content: center"
+    >
+      <img
+        alt="남성초 이미지"
+        src="/plugins/custom_plugin/simple_page/assets/img/str_swiper/3.png"
+        style="height: 100%"
+      />
+    </div>
+
+    <div
+      class="swiper-slide"
+      style="display: flex; align-items: center; justify-content: center"
+    >
+      <img
+        alt="남성초 이미지"
+        src="/plugins/custom_plugin/simple_page/assets/img/str_swiper/4.png"
+        style="height: 100%"
+      />
+    </div>
+
+    <div
+      class="swiper-slide"
+      style="display: flex; align-items: center; justify-content: center"
+    >
+      <img
+        alt="남성초 이미지"
+        src="/plugins/custom_plugin/simple_page/assets/img/str_swiper/5.png"
+        style="height: 100%"
+      />
+    </div>
+
+    <div
+      class="swiper-slide"
+      style="display: flex; align-items: center; justify-content: center"
+    >
+      <img
+        alt="남성초 이미지"
+        src="/plugins/custom_plugin/simple_page/assets/img/str_swiper/6.png"
+        style="height: 100%"
+      />
+    </div>
+
+    <div
+      class="swiper-slide"
+      style="display: flex; align-items: center; justify-content: center"
+    >
+      <img
+        alt="남성초 이미지"
+        src="/plugins/custom_plugin/simple_page/assets/img/str_swiper/7.png"
+        style="height: 100%"
+      />
+    </div>
+
+    <div
+      class="swiper-slide"
+      style="display: flex; align-items: center; justify-content: center"
+    >
+      <img
+        alt="남성초 이미지"
+        src="/plugins/custom_plugin/simple_page/assets/img/str_swiper/8.png"
+        style="height: 100%"
+      />
+    </div>
+
+    <div
+      class="swiper-slide"
+      style="display: flex; align-items: center; justify-content: center"
+    >
+      <img
+        alt="남성초 이미지"
+        src="/plugins/custom_plugin/simple_page/assets/img/str_swiper/15.png"
+        style="height: 100%"
+      />
+    </div>
+  </div>
+</div>
+<script>
+  var swiper2222 = new Swiper(".mySwiper22222", {
+    autoplay: true,
+    slidesPerView: 2.5,
+    keyboard: true,
+    loop: true,
+    autoHeight: true,
+    spaceBetween: 20,
+    breakpoints: {
+      // when window width is >= 768px
+      1140: {
+        direction: "horizontal",
+        slidesPerView: 5.5,
+        spaceBetween: 20,
+      },
+    },
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    // 기본적으로 첫 번째 아코디언 항목이 열려있음
+    $(".accordion").first().addClass("active");
+    $(".accordion").first().next(".accordion-content").show();
+
+    // 아코디언 클릭 이벤트 처리
+    $(".accordion").click(function () {
+      // 클릭된 아코디언이 열려있다면 닫기
+      if ($(this).hasClass("active")) {
+        $(this).removeClass("active");
+        $(this).next(".accordion-content").slideUp(200);
+      } else {
+        // 다른 모든 아코디언을 닫기
+        $(".accordion").removeClass("active");
+        $(".accordion-content").slideUp(200);
+
+        // 클릭된 아코디언을 열기
+        $(this).addClass("active");
+        $(this).next(".accordion-content").slideDown(200);
+      }
+    });
+  });
+</script>
